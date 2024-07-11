@@ -27,14 +27,14 @@ public class estudiantes {
                 String b1Estudiante = b1.getText();
                 String b2Estudiante = b2.getText();
 
-                // Validar que todos los campos estén llenos
+                // Validaciión de los campos
                 if (nombreEstudiante.isEmpty() || apellidoEstudiante.isEmpty() ||
                         cedulaEstudiante.isEmpty() || b1Estudiante.isEmpty() || b2Estudiante.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
                     return;
                 }
 
-                // Realizar la inserción en la base de datos
+                //Inserción de la base
                 try {
                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Registro", "root", "");
                     String sql = "INSERT INTO estudiante1 (nombre, apellido, cedula, b1, b2) VALUES (?, ?, ?, ?, ?)";
